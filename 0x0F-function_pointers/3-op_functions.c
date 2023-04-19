@@ -41,9 +41,9 @@ nt op_mul(int a, int b)
 {
 return (a * b);
 }
-**
+/**
  * op_div - Returns the division of two numbers.
-* @a: The first number.
+ * @a: The first number.
  * @b: The second number.
  *
  * Return: The quotient of a and b.
