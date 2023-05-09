@@ -2,10 +2,11 @@
 #include <stdlib.h>
 
 /**
- * A function that reads a text file and prints it to the POSIX standard output
+ * read_textfile- function that reads a text file and prints it to
+ * the POSIX standard output
  * @filename: text file to be read by the function
  * @letters: number of letters it should read and print
- * Return: the actual number of letters it could read and print
+ * Return: a - the actual number of letters it could read and print
  * 0 if file cannot be opened or file name is NULL
  */
 
