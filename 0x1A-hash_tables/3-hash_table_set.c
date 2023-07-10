@@ -13,7 +13,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index = 0;
 	char *dup_value, *keycopy;
-	hash_node_t  *bucket, *new_node;
+	hash_node_t  *mem, *new_node;
 
 	if (!ht || !key || !*key || !value)
 		return (0);
@@ -23,17 +23,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
-	bucket = ht->array[index];
+	mem = ht->array[index];
 
-	while (bucket)
+	while (mem)
 	{
-		if (!strcmp(key, bucket->key))
+		if (!strcmp(key, mem->key))
 		{
-			free(bucket->value);
-			bucket->value = dup_value;
+			free(mem->value);
+			mem->value = dup_value;
 			return (1);
 		}
-		bucket = bucket->next;
+		mem = mem->next;
 	}
 	new_node = calloc(1, sizeof(hash_node_t));
 	if (new_node == NULL)
